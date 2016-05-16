@@ -1,0 +1,7 @@
+The Proxmox VE container is made possible through LXC from version 4.0 onwards (it's made possible through OpenVZ in previous PVE versions). LXC is the third fundamental technology serving Proxmox VE's ultimate interest. Like KVM and QEMU, LXC (or Linux Containers) is an open source technology. It allows a host to run, and an administrator to manage, multiple operating system instances as isolated containers on a single physical host. Conceptually then, a container very clearly represents a class of virtualization, rather than an opposing concept. Nevertheless, it's helpful to maintain a clear distinction between a virtual machine and a container as we come to terms with PVE.
+
+The ideal implementation of a Proxmox VE guest is contingent on our distinguishing and choosing between a virtual machine solution and a container solution.
+
+Since Proxmox VE containers share components with the host operating system which offers advantages in terms of efficiency, this text will guide you through the creation of containers whenever the intended guest can be fully realized with Debian Jessie as our hypervisor's operating system without sacrificing features.
+
+When our intent is a guest running a Microsoft Windows operating system, for example, a Proxmox VE container ceases to be a solution. In such a case, we turn, instead, to creating a virtual machine. We must rely on a VM precisely because the operating system components that Debian can share with a Linux container are not components that a Microsoft Windows operating system can make use of.
